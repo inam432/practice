@@ -7,7 +7,7 @@ function SignIn() {
    let [email2,setEMAIL2]=useState("")
     let [password2,setPASSWORD2]=useState("")
     async function handleGoogleSignIn(response) { 
-try { const result = await axios.post( "https://online-learning-platform-19fq.onrender.com/api/signInGoogle",
+try { const result = await axios.post( "https://practice-kqep.onrender.com/api/signInGoogle",
        { credential: response.credential } );
        if(result.data.message==='Google sign in successful'){
         localStorage.setItem("token",JSON.stringify(result.data.token));
@@ -34,7 +34,7 @@ if(error.response.data.message==='Account with this email does not exist. Please
       try{
         event.preventDefault()
         const response = await axios.post(
-          "http://localhost:8000/api/signIn",
+          "https://practice-kqep.onrender.com/api/signIn",
           {
             email2,
             password2

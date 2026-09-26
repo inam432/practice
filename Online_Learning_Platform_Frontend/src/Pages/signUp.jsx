@@ -44,7 +44,7 @@ alert("Please enter your phone number and role and then click on sign up button 
             alert("Phone number must be 11 digits");
           }else{
           let response = await axios.post(
-            "https://online-learning-platform-19fq.onrender.com/api/signUpGoogle",
+            "https://practice-kqep.onrender.com/api/signUpGoogle",
             {
               credential: googleCredential,
               phonenumber,
@@ -76,7 +76,7 @@ alert("Please enter your phone number and role and then click on sign up button 
         (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{7,}$/.test(password))){
           e.preventDefault();
           const response = await axios.post(
-            "http://localhost:8000/api/signUp",
+            "https://practice-kqep.onrender.com/api/signUp",
             {name, email,phonenumber,password,role}
         );
         if(response.data.message==='token send to your email for verification'){
@@ -101,7 +101,7 @@ alert("OTP cannot be send to your email for successful sign up. Please check you
        async function verifyOTP(){
         try{ 
         if(otp.length===6){
-      const response=await axios.post("http://localhost:2332/api/verifyOTP", {
+      const response=await axios.post("https://practice-kqep.onrender.com/api/verifyOTP", {
         email,
         otp
     }

@@ -37,7 +37,7 @@ function CreateCourse() {
         try{
         e.preventDefault();
         const token = JSON.parse(localStorage.getItem("token"));
-            const res=await axios.post("https://online-learning-platform-19fq.onrender.com/api/createCourse", {
+            const res=await axios.post("https://practice-kqep.onrender.com/api/createCourse", {
                 courseName,
                 lectures
             },{

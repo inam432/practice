@@ -11,7 +11,7 @@ function Courses() {
     const getCourses = async () => {
         try {
             const token = JSON.parse(localStorage.getItem("token"));
-            const response = await axios.get("https://online-learning-platform-19fq.onrender.com/api/getAllCourses",{
+            const response = await axios.get("https://practice-kqep.onrender.com/api/getAllCourses",{
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -26,7 +26,7 @@ function Courses() {
    
     const courseEnrollment=async(courseName,instructor)=>{try{
         const token = JSON.parse(localStorage.getItem("token"));
-            const res=await axios.post("https://online-learning-platform-19fq.onrender.com/api/enrollCourse", {
+            const res=await axios.post("https://practice-kqep.onrender.com/api/enrollCourse", {
                 courseName,instructor
             },{
                 headers: {
