@@ -43,7 +43,7 @@ req.otpExpires = Date.now() + 5 * 60 * 1000;
       to: user.email,
       subject: "Email Verification",
       text: `Your verification code is ${otp}`
-  });}catch(error){return res.status(500).json({ message: "Error sending email" });}
+  });}catch(error){console.log("Error");return res.status(500).json({ message: "Error sending email" });}
   const signUpUser = new Users_Info_Model({
     name,
     email,phone_Number:phonenumber,
