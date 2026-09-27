@@ -19,6 +19,7 @@ const generateToken = (user) => {
     );
 };
 const signUp=async(req, res) => {
+  try{
     const {name, email,phonenumber,password,role} = req.body;
     const existingUser = await Users_Info_Model.findOne({ email,otp:"",otpExpires:0 });
     if (existingUser) {
@@ -52,8 +53,14 @@ req.otpExpires = Date.now() + 5 * 60 * 1000;
  await signUpUser.save();
     res.status(201).json({
         message: "token send to your email for verification",
-    });
+    });}
+    catch (error) {
+      console.log(error);
 
+      res.status(500).json({
+          message: error.message
+      });
+  }
 };
 const verifyOTP=async(req, res) => {
   try{
