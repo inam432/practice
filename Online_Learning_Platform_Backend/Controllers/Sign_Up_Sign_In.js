@@ -40,7 +40,7 @@ req.otpExpires = Date.now() + 5 * 60 * 1000;
   
   try{await transporter.sendMail({
       from: process.env.EMAIL,
-      to: user.email,
+      to:email,
       subject: "Email Verification",
       text: `Your verification code is ${otp}`
   });}catch(error){console.log("Error");return res.status(500).json({ message: "Error sending email" });}
