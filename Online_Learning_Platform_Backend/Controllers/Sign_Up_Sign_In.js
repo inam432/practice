@@ -55,6 +55,7 @@ req.otpExpires = Date.now() + 5 * 60 * 1000;
         message: "token send to your email for verification",
     });}
     catch(error){
+      console.log("EMAIL ERROR:", error.message);
       console.log(error);
       return res.status(500).json({
           message: "Error sending email",
