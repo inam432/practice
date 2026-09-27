@@ -1,5 +1,6 @@
 const Users_Info_Model=require("../Models/Users_Info.js");
 const Users_Google_Info_Model=require("../Models/Users_Google_Info.js");    
+const nodemailer = require("nodemailer");
 require("dotenv").config();    
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
